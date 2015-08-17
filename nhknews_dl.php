@@ -26,7 +26,7 @@ you think this stuff is worth it, you can buy me a beer in return.
 		$slashes = explode('/', $url); $filename = array_pop($slashes);
 
 		# If we don't already have this file, execute wget to retrieve it.
-		if (file_exists($filename) === false) system("wget " . $v[0]); }
+		if (file_exists($filename) === false) system("wget " . $url); }
 
 	# Enjoy your daily dose of Japanese news. :-)
 ?>
