@@ -11,10 +11,10 @@ you think this stuff is worth it, you can buy me a beer in return.
 
 	# Get file for the NHK website.
 	$xml = file_get_contents(
-		"http://www.nhk.or.jp/r-news/podcast/nhkradionews.xml");
+		"https://www.nhk.or.jp/r-news/podcast/nhkradionews.xml");
 
 	# Parse file for all http:// references to mp3 files.
-	preg_match_all("/http:\/\/.*\.mp3/", $xml, $out, PREG_SET_ORDER);
+	preg_match_all("/https:\/\/.*\.mp3/", $xml, $out, PREG_SET_ORDER);
 
 	# For each reference ...
 	foreach ($out as $values) {
