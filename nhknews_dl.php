@@ -9,9 +9,9 @@ notice you can do whatever you want with this stuff. If we meet some day, and
 you think this stuff is worth it, you can buy me a beer in return.
 */
 
-	# Get file for the NHK website.
+	# Get file from the NHK website.
 	$xml = file_get_contents(
-		"https://www.nhk.or.jp/r-news/podcast/nhkradionews.xml");
+		"https://www.nhk.or.jp/s-media/news/podcast/list/v1/all.xml");
 
 	# Parse file for all http:// references to mp3 files.
 	preg_match_all("/https:\/\/.*\.mp3/", $xml, $out, PREG_SET_ORDER);
@@ -21,7 +21,7 @@ you think this stuff is worth it, you can buy me a beer in return.
 		# Keep the URL.
 		$url = $values[0];
 
-		# We much know the name of each individual file so that we check if we
+		# We must know the name of each individual file so that we check if we
 		# already have it.  Split each url from slashes.  The last one is it. 
 		$slashes = explode('/', $url); $filename = array_pop($slashes);
 
